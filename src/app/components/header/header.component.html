@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="header">
+    <div class="header__logo">netflixroulette</div>
+    <div class="header__title">Find your movie</div>
+
+    <input type="search" class="search" (input)="inputHandler($event)" />
+
+    <div class="search">
+      <div class="search__title">search by</div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="generyChanch('Title')"
+      >
+        Title
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="generyChanch('Genre')"
+      >
+        Genre
+      </button>
+      <button type="button" class="btn btn-light">search</button>
+    </div>
+  </div>
+</div>
