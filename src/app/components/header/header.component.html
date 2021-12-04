@@ -1,27 +1,46 @@
-<div class="container">
-  <div class="header">
-    <div class="header__logo">netflixroulette</div>
-    <div class="header__title">Find your movie</div>
+<form [formGroup]="testForm" (ngSubmit)="onSubmit()">
+  <div formGroupName="userData">
+    <div class="container">
+      <div class="header">
+        <div class="header__logo">netflixroulette</div>
+        <div class="header__title">Find your movie</div>
 
-    <input type="search" class="search" (input)="inputHandler($event)" />
-
-    <div class="search">
-      <div class="search__title">search by</div>
-      <button
-        type="button"
-        class="btn btn-primary"
-        (click)="generyChanch('Title')"
-      >
-        Title
-      </button>
-      <button
-        type="button"
-        class="btn btn-secondary"
-        (click)="generyChanch('Genre')"
-      >
-        Genre
-      </button>
-      <button type="button" class="btn btn-light">search</button>
+        <input
+          type="text"
+          id="searchValue"
+          class="form-control"
+          formControlName="searchValue"
+        />
+        <div class="formCont">
+          <div class="form_radio_btn">
+            <label for="radio-1">
+              <input
+                type="radio"
+                id="radio-1"
+                value="Title"
+                formControlName="genre"
+              />
+              Title
+            </label>
+          </div>
+          <div class="form_radio_btn">
+            <label for="radio-2">
+              <input
+                type="radio"
+                id="radio-2"
+                value="Genre"
+                formControlName="genre"
+              />
+              Genre
+            </label>
+          </div>
+          <div class="search">
+            <button type="submit" class="btn btn-light">Поиск</button>
+          </div>
+        </div>
+        <div class="search__title">search by</div>
+      </div>
     </div>
   </div>
-</div>
+  <app-nav></app-nav>
+</form>

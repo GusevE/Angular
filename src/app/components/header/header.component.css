@@ -31,7 +31,7 @@ max-width: 1920px;
     text-transform: uppercase;
 }
 
-.search{
+.form-control{
     position: relative;
     display: flex;
     align-items: center;
@@ -60,4 +60,44 @@ max-width: 1920px;
 }
 .btn-light{
     margin-left: 250px;
+}
+.form_radio_btn {
+    margin-left: 50px;
+    color: burlywood;
+	display: inline-block;
+	margin-right: 10px;
+}
+.form_radio_btn input[type=radio] {
+	display: none;
+}
+.form_radio_btn label {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 15px;
+	line-height: 34px;
+	border: 1px solid #999;
+	border-radius: 6px;
+	user-select: none;
+}
+ 
+/* Checked */
+.form_radio_btn input[type=radio]:checked + label {
+	background: #ffe0a6;
+}
+ 
+/* Hover */
+.form_radio_btn label:hover {
+	color: #666;
+}
+.form_radio_btn {
+	display: inline-block;
+	margin-right: 10px;
+}
+.form_radio_btn input[type=radio] {
+	display: none;
+}
+.formCont{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
 }

@@ -1,41 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, Input, OnInit } from '@angular/core';
+
+import { FormControl, FormGroup, Validators} from '@angular/forms';
+
 
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+
 })
 export class HeaderComponent implements OnInit {
 
-
-
-  name = "Title";
-  value = ""
-  
+  testForm:any = FormGroup;
+   
   constructor() { 
 
   }
 
   ngOnInit(): void {
 
-  }
-  generyChanch(name:any){
+    this.testForm = new FormGroup({
+      'userData': new FormGroup({
+          'searchValue': new FormControl(null, Validators.required),
+          'genre': new FormControl(null, Validators.required),
+      }),
+          
+  });
+}
 
-    if(name == "Genre")
-   {
-      this.name = "Genre"
-   }
-   else {
-    this.name = "Title"
-   }
-   console.log(name)
-  }
+  onSubmit() {
+  console.log(this.testForm.value);
+}
 
-  inputHandler(event:any){  
 
-    this.value = event.target.value
-    console.log(this.value)
-  }
 
 }
